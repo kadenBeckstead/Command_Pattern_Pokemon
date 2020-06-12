@@ -19,7 +19,7 @@ export class PokemonBattle {
   *
   */
   start_battle() {
-    console.log(`\n\n\n\nA wild ${this.battleService.opponent.name} has appeared...\n\n\n`)
+    console.log(`\n\nA wild ${this.battleService.opponent.name} has appeared...\n`)
       while (true) {
       this.battleService.isBattleActive.subscribe((active: boolean) => {
         if (!active) {
@@ -38,9 +38,9 @@ export class PokemonBattle {
   */
   private printGenericOptions(): void {
     console.log('\nWhat will you do? (1 - 3):\n');
-    console.log('1. Attack\n');
-    console.log('2. Use an Item\n');
-    console.log('3. Run\n\n');
+    console.log('1. Attack');
+    console.log('2. Use an Item');
+    console.log('3. Run\n');
   }
 
   /*
@@ -54,7 +54,7 @@ export class PokemonBattle {
     switch (sel) {
 
       case '1':
-        console.log(`\nChoose an attack (1-${this.pokemonService.attackList.length}):\n`);
+        console.log(`\n\nChoose an attack (1-${this.pokemonService.attackList.length}):\n`);
         this.pokemonService.attackList.forEach((attack: Attack, i: number) => {
           console.log(`${i+1}. ${attack.name}`)
         })

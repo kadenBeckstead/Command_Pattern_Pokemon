@@ -16,6 +16,7 @@ export type Item = string;
 export type Pokemon = { 
 	name: string, 
 	hp: number, 
-	maxHp: number 
+	maxHp: number,
+	attack: number 
 }
 

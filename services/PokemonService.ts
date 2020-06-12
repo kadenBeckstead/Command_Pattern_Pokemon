@@ -1,3 +1,4 @@
+import { Pokemon } from "../types";
 
 /*
 *   ---- PokemonService ----
@@ -8,17 +9,17 @@
 export class PokemonService {
 
 	public pokemonList = [
-		{ name: 'Pikachu',   hp: 35,  maxHp: 35  },
-		{ name: 'Caterpie',  hp: 45,  maxHp: 45  },
-		{ name: 'Geodude',   hp: 40,  maxHp: 40  },
-		{ name: 'Onix',      hp: 35,  maxHp: 35  },
-		{ name: 'Magicarp',  hp: 20,  maxHp: 20  },
-		{ name: 'Oddish',    hp: 45,  maxHp: 45  },
-		{ name: 'Abra',      hp: 25,  maxHp: 25  },
-		{ name: 'Scyther',   hp: 75,  maxHp: 75  },
-		{ name: 'Machop',    hp: 70,  maxHp: 70  },
-		{ name: 'Charizard', hp: 78,  maxHp: 78  },
-		{ name: 'Mewtwo',    hp: 106, maxHp: 106 }
+		{ name: 'Pikachu',   hp: 35,  maxHp: 35,   attack: 55  },
+		{ name: 'Caterpie',  hp: 45,  maxHp: 45,   attack: 30  },
+		{ name: 'Geodude',   hp: 40,  maxHp: 40,   attack: 80  },
+		{ name: 'Onix',      hp: 35,  maxHp: 35,   attack: 45  },
+		{ name: 'Magicarp',  hp: 20,  maxHp: 20,   attack: 10  },
+		{ name: 'Oddish',    hp: 45,  maxHp: 45,   attack: 50  },
+		{ name: 'Abra',      hp: 25,  maxHp: 25,   attack: 20  },
+		{ name: 'Scyther',   hp: 75,  maxHp: 75,   attack: 110 },
+		{ name: 'Machop',    hp: 70,  maxHp: 70,   attack: 80  },
+		{ name: 'Charizard', hp: 78,  maxHp: 78,   attack: 84  },
+		{ name: 'Mewtwo',    hp: 106, maxHp: 106,  attack: 110 }
 	]
 
 	public attackList = [
@@ -28,7 +29,7 @@ export class PokemonService {
 		{name: 'Slash', power: 70}
 	]
 
-	public getOpponent(): {name: string, hp: number, maxHp: number} {
+	public getOpponent(): Pokemon {
 		let pokemonList = this.pokemonList;
 		let dice: number = Math.floor(Math.random() * (pokemonList.length - 1) + 1);
 		return pokemonList[dice];
